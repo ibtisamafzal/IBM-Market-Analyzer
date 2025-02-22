@@ -1,0 +1,7 @@
+applications:
+  - name: ibm-analyzer-backend
+    buildpack: python_buildpack
+    memory: 256M
+    instances: 1
+    env:
+      FLASK_ENV: production
