@@ -20,8 +20,3 @@ def create_app():
         return "Flask API is running!"
 
     return app
-
-from app.main import app  # Ensure this matches your app import
-
-if __name__ == "__main__":
-    app.run()
