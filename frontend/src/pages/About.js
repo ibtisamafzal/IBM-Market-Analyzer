@@ -1,47 +1,92 @@
-// src/pages/About.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../custom.css';
 
+const FeatureCard = ({ icon, title, description }) => (
+    <div className="feature-card">
+        <div className="feature-content">
+        <div className="feature-icon">{icon}</div>
+        <h3 className="feature-title">{title}</h3>
+        <p className="feature-description">{description}</p>
+        </div>
+    </div>
+);
+
 const About = () => {
+    const navigate = useNavigate(); // Initialize useNavigate
+
+    const features = [
+        {
+        icon: "🧠",
+        title: "AI-Powered Analysis",
+        description: "Leveraging IBM Granite AI models for advanced sentiment analysis and market trend predictions"
+        },
+        {
+        icon: "📈",
+        title: "Real-Time Insights",
+        description: "Stay updated with live market news and sentiment analysis through our visual temperature meter"
+        },
+        {
+        icon: "⚡",
+        title: "Smart Decisions",
+        description: "Make data-driven business decisions with our AI-powered recommendations and insights"
+        },
+        {
+        icon: "👥",
+        title: "Multiple Use Cases",
+        description: "Perfect for analysts, startup founders, business owners, and VC firms seeking market intelligence"
+        }
+    ];
+
     return (
-        <div className="about-container">
-            <h1 className="about-title">About Us</h1>
-            <p className="about-description">
-                Welcome to <strong>IBM Analyzer</strong> – your go-to platform for the latest 
-                market trends, insights, and data-driven analysis. Our mission is to 
-                provide <strong>real-time updates</strong> and <strong>expert insights</strong> to help you stay ahead 
-                in the fast-paced financial world.
+        <div className="about-page">
+        {/* Hero Section */}
+        <div className="hero-section">
+            <h1 className="hero-title">Market Intelligence Reimagined</h1>
+            <p className="hero-description">
+            Welcome to the future of market analysis. Our AI-powered platform transforms complex market data into actionable insights.
             </p>
+            <button 
+                className="primary-button"
+                onClick={() => navigate('/')} // Navigate to the home page
+            >
+            Get Started
+            <span className="button-arrow">→</span>
+            </button>
+        </div>
 
-            <div className="about-section">
-                <h2 className="about-subtitle">Our Mission</h2>
-                <p className="about-text">
-                    In today's ever-changing market, keeping up with trends can be overwhelming. 
-                    Our goal is to <strong>simplify market insights</strong> and present you with the most 
-                    relevant information in an <strong>easy-to-digest</strong> manner.
-                </p>
+        {/* Features Grid */}
+        <div className="features-grid">
+            {features.map((feature, index) => (
+            <FeatureCard key={index} {...feature} />
+            ))}
+        </div>
+
+        {/* Technology Stack */}
+        <div className="tech-stack">
+            <h2 className="section-title">Powered by Leading Technology</h2>
+            <div className="tech-grid">
+            {[
+                "React Frontend",
+                "Flask Backend",
+                "IBM Granite AI",
+                "Bing News API"
+            ].map((tech, index) => (
+                <div key={index} className="tech-card">
+                <p>{tech}</p>
+                </div>
+            ))}
             </div>
+        </div>
 
-            <div className="about-section">
-                <h2 className="about-subtitle">Why Choose Us?</h2>
-                <ul className="about-list">
-                    <li>✅ AI-powered <strong>data analysis</strong> and trend predictions.</li>
-                    <li>✅ <strong>Real-time updates</strong> on stock performance and market shifts.</li>
-                    <li>✅ User-friendly interface for a <strong>seamless experience</strong>.</li>
-                    <li>✅ <strong>Trusted sources</strong> and <strong>accurate information</strong>.</li>
-                </ul>
-            </div>
-
-            <div className="about-section">
-                <h2 className="about-subtitle">Join Us!</h2>
-                <p className="about-text">
-                    Stay ahead of the market with <strong>IBM Analyzer</strong>. Whether you are an investor, 
-                    analyst, or just a market enthusiast, we provide <strong>cutting-edge insights</strong> to 
-                    keep you informed.  
-                </p>
-            </div>
-
-            <p className="about-footer">🚀 Explore the future of market analysis with us!</p>
+        {/* Call to Action */}
+        <div className="cta-section">
+            <h2 className="cta-title">Ready to Transform Your Market Analysis?</h2>
+            <p className="cta-description">
+            Join industry leaders who trust our platform for their market intelligence needs.
+            </p>
+            <button className="secondary-button">Learn More</button>
+        </div>
         </div>
     );
 };

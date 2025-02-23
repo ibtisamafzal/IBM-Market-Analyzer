@@ -21,6 +21,7 @@ def create_app():
 
     return app
 
-if __name__ == '__main__':
-    app = create_app()
-    app.run(debug=True)
+from app.main import app  # Ensure this matches your app import
+
+if __name__ == "__main__":
+    app.run()

@@ -2,14 +2,12 @@
 ```
 IBM-Analyzer
 ├─ backend
-│  ├─ .env
 │  ├─ app
 │  │  ├─ config.py
 │  │  ├─ main.py
 │  │  ├─ models
 │  │  ├─ routes
 │  │  │  ├─ news_routes.py
-│  │  │  ├─ news_routes_backup.py
 │  │  │  ├─ __init__.py
 │  │  │  └─ __pycache__
 │  │  │     ├─ news_routes.cpython-312.pyc
@@ -20,31 +18,37 @@ IBM-Analyzer
 │  │  └─ __pycache__
 │  │     ├─ main.cpython-312.pyc
 │  │     └─ __init__.cpython-312.pyc
+│  ├─ manifest.yml
 │  ├─ requirements.txt
 │  └─ run.py
 ├─ deployment
 │  └─ cloud-config
 ├─ frontend
-│  ├─ .env
+│  ├─ .vercel
+│  │  ├─ project.json
+│  │  └─ README.txt
 │  ├─ package-lock.json
 │  ├─ package.json
 │  ├─ public
 │  │  └─ index.html
-│  └─ src
-│     ├─ App.js
-│     ├─ components
-│     │  ├─ Footer.js
-│     │  ├─ Header.js
-│     │  ├─ NewsCard.js
-│     │  └─ SentimentMeter.js
-│     ├─ custom.css
-│     ├─ index.js
-│     ├─ pages
-│     │  ├─ About.js
-│     │  ├─ Contact.js
-│     │  └─ Home.js
-│     └─ services
-│        └─ api.js
+│  ├─ src
+│  │  ├─ App.js
+│  │  ├─ components
+│  │  │  ├─ Footer.js
+│  │  │  ├─ Header.js
+│  │  │  ├─ NewsCard.js
+│  │  │  └─ SentimentMeter.js
+│  │  ├─ custom.css
+│  │  ├─ index.js
+│  │  ├─ pages
+│  │  │  ├─ About.js
+│  │  │  ├─ Contact.js
+│  │  │  ├─ Home.js
+│  │  │  └─ Team.js
+│  │  └─ services
+│  │     └─ api.js
+│  └─ vercel.json
+├─ IBM-Analyzer.zip
 ├─ package-lock.json
 ├─ package.json
 ├─ README.md

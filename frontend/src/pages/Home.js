@@ -20,7 +20,7 @@ const Home = () => {
 
         setLoading(true);
         setError("");
-        
+
         const data = await fetchNewsWithSentiment(query);
         setNews(data.articles);
         setSentimentScore(data.sentiment_score);
@@ -30,32 +30,35 @@ const Home = () => {
     };
 
     return (
-        <Container className="mt-5">
-            <h1 className="text-center text-white mb-4">Market Trend News</h1>
+        <Container className="mt-4 text-center main-container">
+            <h1 className="text-white fw-bold mb-4">AI-Powered Market Insights: Trends & Sentiment in Real-Time</h1>
+            <p className="text-white mb-4">
+                🚀 Stay ahead of market shifts with real-time sentiment analysis, data-driven decisions, mitigate risks, and capitalize on emerging opportunities.
+            </p>
 
             {/* Search Bar */}
-            <Form className="d-flex mb-4 justify-content-center">
+            <Form className="d-flex search-bar mt-5 mb-4 justify-content-center">
                 <Form.Control
                     type="text"
-                    placeholder="Enter a topic (e.g. AI, Finance, Stocks)..."
+                    placeholder="🔍 Search for trends (e.g., AI, Finance, Stocks)..."
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    className="w-50 me-2"
+                    className="search-input rounded-pill px-3"
                 />
-                <Button variant="primary" onClick={handleSearch}>
-                    Search
+                <Button variant="warning" onClick={handleSearch} className="search-button ms-2 rounded-pill px-4">
+                    Analyze
                 </Button>
             </Form>
 
             {error && <Alert variant="danger" className="text-center">{error}</Alert>}
-            {loading && <div className="text-center"><Spinner animation="border" /></div>}
+            {loading && <div className="text-center"><Spinner animation="border" variant="light" /></div>}
 
             {/* Display Sentiment Analysis */}
             {sentimentScore !== null && (
                 <div className="text-center mb-4">
-                    <h5>Overall Sentiment</h5>
+                    <h5 className="text-white">Overall Sentiment</h5>
                     <SentimentMeter score={sentimentScore} />
-                    <p className="mt-2">{recommendations[0]}</p>
+                    <p className="mt-2 text-light">{recommendations[0]}</p>
                 </div>
             )}
 
@@ -63,7 +66,7 @@ const Home = () => {
             <Row>
                 {news.length > 0 ? (
                     news.map((article, index) => (
-                        <Col key={index} sm={12} md={6} lg={6}> {/* Two cards per row */}
+                        <Col key={index} sm={12} md={6} lg={4} className="mb-3">
                             <NewsCard {...article} sentiment={sentimentScore} />
                         </Col>
                     ))
