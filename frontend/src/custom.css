@@ -84,8 +84,38 @@ body {
 
 /* Sentiment Meter Styling */
 .sentiment-meter {
-  width: 60%;
-  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sentiment-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 5px;
+  color: #ffffff;
+}
+
+.sentiment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; /* Adjust this if needed */
+  text-align: center;
+}
+
+.sentiment-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.sentiment-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .progress {

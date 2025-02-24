@@ -55,10 +55,10 @@ const Home = () => {
 
             {/* Display Sentiment Analysis */}
             {sentimentScore !== null && (
-                <div className="text-center mb-4">
+                <div className="text-center  mt-5">
                     <h5 className="text-white">Overall Sentiment</h5>
                     <SentimentMeter score={sentimentScore} />
-                    <p className="mt-2 text-light">{recommendations[0]}</p>
+                    <p className="mt-4 mb-5 text-light">{recommendations[0]}</p>
                 </div>
             )}
 
